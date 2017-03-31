@@ -4,6 +4,22 @@ Processing queue for [AngularJS](http://angularjs.org/).
 
 Based on http://benalman.com/code/projects/jquery-message-queuing/docs/files/jquery-ba-jqmq-js.html
 
+## New features
+
+- Queue can be persistent.
+- Max concurrent processes option
+
+## Options
+
+
+|name|type|default|description|
+|---|---|---|---|
+|delay|`Integer`|100|Minimal delay between queue calls|
+|persistent|`Boolean`|false|Whether the queue persists when queue is empty|
+|max_concurrent|`Integer`|-1|How many concurrent callbacks can run at once, a.k.a throttle|
+|complete|`Integer`|null|Optional complet callback, *note: the callback is never used when persistent is set to `true`*|
+|paused|`Integer`|false|Whether to start the queue automatically or not|
+
 ## Usage
 
 Include `angular-queue.js` after your main AngularJS script.
@@ -34,6 +50,9 @@ app.controller("MyCtrl", ['$queue',
             
         myQueue.add('item 1'); //add one item
         myQueue.addEach(['item 2', 'item 3']); //add multiple items
+        
+        myQueue.addFirst('item 1'); //push one item on top of the pile
+        myQueue.addEachFirst(['item 2', 'item 3']); //push  multiple items on top of the pile
         
         myQueue.start(); //must call start() if queue starts paused
     }]

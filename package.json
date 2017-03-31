@@ -1,6 +1,6 @@
 {
   "name": "angular-queue",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Processing queue for AngularJS",
   "main": "angular-queue.js",
   "directories": {
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "https://github.com/jseppi/angular-queue.git"
   },
-  "author": "James Seppi",
+  "author": "Xtraball SAS",
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
